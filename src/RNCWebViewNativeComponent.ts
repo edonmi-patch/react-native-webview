@@ -73,13 +73,7 @@ export type WebViewNavigationEvent = Readonly<{
   canGoBack: boolean;
   canGoForward: boolean;
   lockIdentifier: Double;
-  navigationType:
-    | 'click'
-    | 'formsubmit'
-    | 'backforward'
-    | 'reload'
-    | 'formresubmit'
-    | 'other';
+  navigationType: string;
   mainDocumentURL?: string;
 }>;
 
@@ -90,13 +84,7 @@ export type ShouldStartLoadRequestEvent = Readonly<{
   canGoBack: boolean;
   canGoForward: boolean;
   lockIdentifier: Double;
-  navigationType:
-    | 'click'
-    | 'formsubmit'
-    | 'backforward'
-    | 'reload'
-    | 'formresubmit'
-    | 'other';
+  navigationType: string;
   mainDocumentURL?: string;
   isTopFrame: boolean;
 }>;
@@ -190,34 +178,14 @@ export interface NativeProps extends ViewProps {
   }>;
   contentInsetAdjustmentBehavior?: WithDefault<string, 'never'>;
   contentMode?: WithDefault<string, 'recommended'>;
-  dataDetectorTypes?: WithDefault<
-    ReadonlyArray<
-      | 'address'
-      | 'link'
-      | 'calendarEvent'
-      | 'trackingNumber'
-      | 'flightNumber'
-      | 'lookupSuggestion'
-      | 'phoneNumber'
-      | 'all'
-      | 'none'
-    >,
-    'phoneNumber'
-  >;
+  dataDetectorTypes?: WithDefault<ReadonlyArray<string>, 'phoneNumber'>;
   decelerationRate?: Double;
   directionalLockEnabled?: WithDefault<boolean, true>;
   enableApplePay?: boolean;
   hideKeyboardAccessoryView?: boolean;
   keyboardDisplayRequiresUserAction?: WithDefault<boolean, true>;
   limitsNavigationsToAppBoundDomains?: boolean;
-  mediaCapturePermissionGrantType?: WithDefault<
-    | 'prompt'
-    | 'grant'
-    | 'deny'
-    | 'grantIfSameHostElsePrompt'
-    | 'grantIfSameHostElseDeny',
-    'prompt'
-  >;
+  mediaCapturePermissionGrantType?: WithDefault<string, 'prompt'>;
   pagingEnabled?: boolean;
   pullToRefreshEnabled?: boolean;
   refreshControlLightMode?: boolean;
