@@ -147,14 +147,8 @@ export interface NativeProps extends ViewProps {
   allowFileAccess?: boolean;
   allowsProtectedMedia?: boolean;
   allowsFullscreenVideo?: boolean;
-  androidLayerType?: WithDefault<'none' | 'software' | 'hardware', 'none'>;
-  cacheMode?: WithDefault<
-    | 'LOAD_DEFAULT'
-    | 'LOAD_CACHE_ELSE_NETWORK'
-    | 'LOAD_NO_CACHE'
-    | 'LOAD_CACHE_ONLY',
-    'LOAD_DEFAULT'
-  >;
+  androidLayerType?: WithDefault<string, 'none'>;
+  cacheMode?: WithDefault<string, 'LOAD_DEFAULT'>;
   domStorageEnabled?: boolean;
   downloadingMessage?: string;
   forceDarkOn?: boolean;
@@ -162,7 +156,7 @@ export interface NativeProps extends ViewProps {
   lackPermissionToDownloadMessage?: string;
   messagingModuleName: string;
   minimumFontSize?: Int32;
-  mixedContentMode?: WithDefault<'never' | 'always' | 'compatibility', 'never'>;
+  mixedContentMode?: WithDefault<string, 'never'>;
   nestedScrollEnabled?: boolean;
   onContentSizeChange?: DirectEventHandler<WebViewNativeEvent>;
   onRenderProcessGone?: DirectEventHandler<WebViewRenderProcessGoneEvent>;
@@ -194,14 +188,8 @@ export interface NativeProps extends ViewProps {
     bottom?: Double;
     right?: Double;
   }>;
-  contentInsetAdjustmentBehavior?: WithDefault<
-    'never' | 'automatic' | 'scrollableAxes' | 'always',
-    'never'
-  >;
-  contentMode?: WithDefault<
-    'recommended' | 'mobile' | 'desktop',
-    'recommended'
-  >;
+  contentInsetAdjustmentBehavior?: WithDefault<string, 'never'>;
+  contentMode?: WithDefault<string, 'recommended'>;
   dataDetectorTypes?: WithDefault<
     ReadonlyArray<
       | 'address'
@@ -282,7 +270,7 @@ export interface NativeProps extends ViewProps {
   onShouldStartLoadWithRequest: DirectEventHandler<ShouldStartLoadRequestEvent>;
   showsHorizontalScrollIndicator?: WithDefault<boolean, true>;
   showsVerticalScrollIndicator?: WithDefault<boolean, true>;
-  indicatorStyle?: WithDefault<'default' | 'black' | 'white', 'default'>;
+  indicatorStyle?: WithDefault<string, 'default'>;
   newSource: Readonly<{
     uri?: string;
     method?: string;
